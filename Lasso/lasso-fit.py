@@ -13,7 +13,9 @@ X, y = load_diabetes(return_X_y=True, as_frame=True)
 
 print("Features:")
 print(X.columns.tolist())
-print()
+print("Target")
+print(y.name)
+print(y.describe())
 
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
