@@ -40,7 +40,7 @@ This example uses `LassoLarsCV` method.  This method compute the entire sloution
 4. When another feature becomes equally correlated, include it
 5. Continue in a piecewise linear path
 
-Training Data is split into five partitions. This is indicated by `cv=5` in the model definition as shown in [lsso-fit.py](./lasso-fit.py). There is a partition `X_test` that is hold-out data not used for training.
+Training Data is split into five partitions. This is indicated by `cv=5` in the model definition as shown in [lasso-fit.py](./lasso-fit.py). There is a partition `X_test` that is hold-out data not used for training.
 
 
 # Model definition
