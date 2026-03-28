@@ -79,4 +79,8 @@ $$(X^T X)^{-1} (X^T X) \hat{\beta} = (X^T X)^{-1} X^T y$$
 
 Since a matrix multiplied by its inverse results in the Identity matrix ($I$), and $I\hat{\beta} = \hat{\beta}$, we arrive at the final solution for the beta coefficient vector:
 
-$$\hat{\beta} = (X^T X)^{-1} X^T y$$
+> **The Analytical Solution for OLS:**
+>
+> $$ \hat{\beta} = (X^T X)^{-1} X^T y $$
+
+The above equation is the closed-form solution for coefficients that minimized error in an unbiased way for a linear regression formula.
