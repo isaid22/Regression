@@ -71,7 +71,7 @@ $$X^T X \hat{\beta} = X^T y$$
 
 To solve for $\hat{\beta}$, we need to multiply both sides of the equation by the inverse of $(X^T X)$. 
 
-*(Note: $(X^T X)$ is a $p \times p$ square matrix. For the inverse $(X^T X)^{-1}$ to exist, $X$ must have full column rank, meaning no variables in $X$ are perfectly collinear, and we must have $n \ge p$.)*
+> **Note:** The matrix $(X^T X)$ is a $p \times p$ square matrix. For the inverse $(X^T X)^{-1}$ to exist, $X$ must have full column rank, meaning no variables in $X$ are perfectly collinear, and we must have $n \ge p$.
 
 Multiply both sides by $(X^T X)^{-1}$ on the left:
 
