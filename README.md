@@ -3,3 +3,4 @@ This is a repo for regression examples.
 
 - [Lasso Regression](./Lasso/LassoRegression.md)
 - [Linear Regression](./OLS-beta-calculation/linear_regression_derivation.md)
+- [GARCH Volatility Model](./GARCH/garch-readme.md)
