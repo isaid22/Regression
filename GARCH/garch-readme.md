@@ -1,7 +1,7 @@
-# ATM Cash Demand: Risk & Volatility Modeling
+# ATM Cash Demand: Risk & Volatility Modeling - PArt 1: Generate Example Data
 
 ## 1. Project Architecture
-The objective is to manage the inventory of 20,000 ATMs by modeling not just the expected volume of bills, but the **volatility** (risk) of that demand. This ensures that safety stock levels are calculated dynamically to prevent stock-outs during high-impact events.
+The objective is to manage the inventory of 1 ATMs by modeling not just the expected volume of bills, but the **volatility** (risk) of that demand. This ensures that safety stock levels are calculated dynamically to prevent stock-outs during high-impact events.
 
 ---
 
