@@ -1,3 +1,4 @@
+import pickle
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,23 +7,25 @@ from arch import arch_model
 # 1. Load your existing data
 df = pd.read_csv("atm_demand_data.csv", index_col='date', parse_dates=True)
 
-# 2. Re-create the training features (Monday is the baseline)
-df['dow'] = df.index.dayofweek
-train_x = pd.get_dummies(df['dow'], prefix='day', drop_first=True).astype(float)
+# 2. Build training features
+from features import build_features
+train_x = build_features(df.index)
 
 # 3. Fit the model (The GARCH-X setup that worked well for you)
 model = arch_model(df['demand'], x=train_x, mean='ARX', vol='Garch', p=1, q=1)
 res = model.fit(disp='off')
 
+# Save the fitted result for later inference
+with open("garch_result.pkl", "wb") as f:
+    pickle.dump(res, f)
+print("Model saved to garch_result.pkl")
+
 # 4. Generate the FUTURE dates and features (35 days ahead)
 last_date = df.index[-1]
 future_dates = pd.date_range(start=last_date + pd.Timedelta(days=1), periods=35)
-future_dow = future_dates.dayofweek
 
-# This ensures the future 'x' matches the training 'x' columns exactly
-future_x = pd.DataFrame(index=future_dates)
-for d in range(1, 7): # Tuesday (1) through Sunday (6)
-    future_x[f'day_{d}'] = (future_dow == d).astype(float)
+# Build future features using the same function as training
+future_x = build_features(future_dates)
 
 # 5. Execute Forecast
 # The library is very specific: with multiple x variables, it often wants 

@@ -1,0 +1,5 @@
+arch==8.0.0
+pandas==2.2.3
+numpy==2.2.6
+matplotlib==3.10.0
+holidays==0.95
